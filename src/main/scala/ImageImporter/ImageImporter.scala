@@ -1,7 +1,7 @@
 package ImageImporter
 
-import Image.Image
+import Image.RGBImage
 
 trait ImageImporter {
-    def ImportImage() : Image
+    def ImportImage() : RGBImage
 }
