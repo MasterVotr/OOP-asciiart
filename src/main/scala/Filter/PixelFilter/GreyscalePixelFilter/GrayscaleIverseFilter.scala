@@ -1,7 +1,7 @@
-package PixelFilter.GreyscalePixelFilter
+package Filter.PixelFilter.GreyscalePixelFilter
 
 import Image.PixelGrid.Pixel.GreyscalePixel
-import PixelFilter.PixelFilter
+import Filter.PixelFilter.PixelFilter
 
 class GrayscaleIverseFilter extends PixelFilter[GreyscalePixel]{
     override def applyFiler(pixel: GreyscalePixel): Unit = {

@@ -1,4 +1,4 @@
-package PixelFilter
+package Filter.PixelFilter
 
 import Image.PixelGrid.Pixel.Pixel
 
