@@ -1,7 +1,7 @@
-package ASCIIArt.Filter.PixelFilter
+package ASCIIArt.ImageFilter.PixelFilterer.PixelFilter
 
 import ASCIIArt.Image.PixelGrid.Pixel.Pixel
 
 trait PixelFilter[P <: Pixel] {
-  def applyFiler(pixel: P): Unit
+  def apply(pixel: P): P
 }

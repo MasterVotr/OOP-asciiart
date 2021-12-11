@@ -1,4 +1,4 @@
-package ASCIIArt.Filter.ImageFilter.TransformFilter
+package ASCIIArt.ImageFilter.TransformFilter.ScaleFilter
 
 sealed trait ScalingEnum
 object ScaleHalf extends ScalingEnum

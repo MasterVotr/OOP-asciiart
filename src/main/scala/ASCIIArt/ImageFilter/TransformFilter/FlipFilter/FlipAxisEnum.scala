@@ -1,4 +1,4 @@
-package ASCIIArt.Filter.ImageFilter.TransformFilter
+package ASCIIArt.ImageFilter.TransformFilter.FlipFilter
 
 sealed trait FlipAxisEnum
 object FlipX extends FlipAxisEnum

@@ -1,4 +1,4 @@
-package ASCIIArt.Filter.ImageFilter.TransformFilter
+package ASCIIArt.ImageFilter.TransformFilter.RotateFilter
 
 sealed trait RotationEnum
 object Rot90 extends RotationEnum
