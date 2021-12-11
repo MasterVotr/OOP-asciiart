@@ -32,5 +32,5 @@ abstract class RotateFilter[P <: Pixel](rotation: RotationEnum) extends ImageFil
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
  */

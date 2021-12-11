@@ -19,7 +19,7 @@ class ScaleFilterGreyscale(scale: ScalingEnum) extends ScaleFilter[GreyscalePixe
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 
   override def DoubleScale(image: Image[GreyscalePixel]): Image[GreyscalePixel] = {
@@ -33,6 +33,6 @@ class ScaleFilterGreyscale(scale: ScalingEnum) extends ScaleFilter[GreyscalePixe
       newPixelGrid.appended(newPixelLine)
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 }

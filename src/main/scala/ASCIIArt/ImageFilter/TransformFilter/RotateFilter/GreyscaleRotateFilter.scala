@@ -14,6 +14,6 @@ class GreyscaleRotateFilter(deg: RotationEnum) extends RotateFilter[GreyscalePix
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 }

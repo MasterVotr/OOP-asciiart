@@ -14,7 +14,7 @@ class GreyscaleFlipFilter(axis: FlipAxisEnum) extends FlipFilter[GreyscalePixel]
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 
   override def YFlip(image: Image[GreyscalePixel]): Image[GreyscalePixel] = {
@@ -26,6 +26,6 @@ class GreyscaleFlipFilter(axis: FlipAxisEnum) extends FlipFilter[GreyscalePixel]
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 }

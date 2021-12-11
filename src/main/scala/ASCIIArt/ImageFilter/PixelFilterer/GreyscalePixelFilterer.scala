@@ -15,6 +15,6 @@ class GreyscalePixelFilterer(pixelFilter: PixelFilter[GreyscalePixel]) extends P
       }
       newPixelGrid.appended(newPixelLine)
     }
-    new GreyscaleImage(newPixelGrid)
+    GreyscaleImage(newPixelGrid)
   }
 }
