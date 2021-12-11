@@ -1,5 +1,5 @@
 package ASCIIArt.Controller.Command.FilterCommand
 
-import ASCIIArt.Controller.Command.Command
+import ASCIIArt.Controller.Command.GreyscaleCommand
 
-trait FilterCommand extends Command {}
+trait FilterCommand extends GreyscaleCommand {}

@@ -1,7 +1,8 @@
 package ASCIIArt.Controller.Command
 
-import ASCIIArt.Image.GreyscaleImage
+import ASCIIArt.Image.Image
+import ASCIIArt.Image.PixelGrid.Pixel.Pixel
 
-trait Command {
-  def Execute(target: GreyscaleImage): Unit
+trait Command[P <: Pixel] {
+  def Execute(target: Image[P]): Image[P]
 }

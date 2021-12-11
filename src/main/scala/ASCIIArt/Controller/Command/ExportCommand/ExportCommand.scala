@@ -1,5 +1,5 @@
 package ASCIIArt.Controller.Command.ExportCommand
 
-import ASCIIArt.Controller.Command.Command
+import ASCIIArt.Controller.Command.GreyscaleCommand
 
-trait ExportCommand extends Command {}
+trait ExportCommand extends GreyscaleCommand {}
