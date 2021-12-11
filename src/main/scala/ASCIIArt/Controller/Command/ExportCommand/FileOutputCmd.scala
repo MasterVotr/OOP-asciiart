@@ -8,7 +8,7 @@ import ASCIIArt.TextExporter.FileTextExporter.FileTextExporter
 class FileOutputCmd(path: String) extends ExportCommand {
   override def Execute(target: Image[GreyscalePixel]): Image[GreyscalePixel] = {
     val asciigen = new ImageAsciiGenerator()
-    val output = asciigen.Generate(target)
+    val output = asciigen.generateArt(target)
     val exporter = new FileTextExporter(path)
     exporter.ExportText(output)
     target

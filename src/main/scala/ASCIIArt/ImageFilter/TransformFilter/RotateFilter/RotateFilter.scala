@@ -22,15 +22,4 @@ abstract class RotateFilter[P <: Pixel](rotation: RotationEnum) extends ImageFil
   }
 
   def Rotate90deg(image: Image[P]): Image[P]
-/*
-    val newPixelGrid = Vector[P]()
-    for (y <- 0 until image.getHeight()) {
-      val newPixelLine = Vector[P]()
-      for (x <- 0 until image.getWidth()) {
-        val newBrightness = 255 - image.getPixel(x, y).brightness
-        newPixelLine.appended(new GreyscalePixel(newBrightness))
-      }
-      newPixelGrid.appended(newPixelLine)
-    }
-    GreyscaleImage(newPixelGrid)
- */
+}
