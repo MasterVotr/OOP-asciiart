@@ -1,8 +1,9 @@
 package ASCIIArt.Image.PixelGrid.Pixel
 
-class GreyscalePixel(var brightness: Int) extends Pixel {
-  override def clamp(): Unit = {
-    this.brightness = if (brightness > 255) 255 else brightness
-    this.brightness = if (brightness < 0) 0 else brightness
+case class GreyscalePixel(brightness: Int) extends Pixel {
+  override def clamp(): GreyscalePixel = {
+    var newBrightness = if (brightness > 255) 255 else brightness
+    newBrightness = if (brightness < 0) 0 else brightness
+    GreyscalePixel(newBrightness)
   }
 }

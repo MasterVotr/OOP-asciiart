@@ -1,6 +1,6 @@
 package ASCIIArt.Image.PixelGrid.Pixel
 
-class RGBPixel(var red: Int, var green: Int, var blue: Int) extends Pixel {
+case class RGBPixel(red: Int, green: Int, blue: Int) extends Pixel {
 
   def this(colour: Int) =
     this(
@@ -9,15 +9,16 @@ class RGBPixel(var red: Int, var green: Int, var blue: Int) extends Pixel {
       (colour & 0x0000ff) >> 16 // blue
     )
 
-  override def clamp(): Unit = {
+  override def clamp(): RGBPixel = {
     // clamp red
-    this.red = if (red > 255) 255 else red
-    this.red = if (red < 0) 0 else red
+    var newRed = if (red > 255) 255 else red
+    newRed = if (red < 0) 0 else red
     // clamp green
-    this.green = if (green > 255) 255 else green
-    this.green = if (green < 0) 0 else green
+    var newGreen = if (green > 255) 255 else green
+    newGreen = if (green < 0) 0 else green
     // clamp blue
-    this.blue = if (blue > 255) 255 else blue
-    this.blue = if (blue < 0) 0 else blue
+    var newBlue = if (blue > 255) 255 else blue
+    newBlue = if (blue < 0) 0 else blue
+    RGBPixel(newRed, newGreen, newBlue)
   }
 }

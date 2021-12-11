@@ -9,6 +9,7 @@ class RGBtoGreyscaleConvertor(
   redScale: Double = 0.3,
   greenScale: Double = 0.59,
   blueScale: Double = 0.11) {
+
   def ConvertImage(rgbImage: RGBImage): GreyscaleImage = {
     val greyscalePixels = ArrayBuffer[Array[GreyscalePixel]]()
     val width = rgbImage.getWidth()

@@ -2,11 +2,7 @@ package ASCIIArt.Image.PixelGrid
 
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 
-class GreyscalePixelGrid(
-  _width: Int,
-  _height: Int,
-  _pixels: Array[Array[GreyscalePixel]])
-    extends PixelGrid[GreyscalePixel](_width, _height, _pixels) {
+class GreyscalePixelGrid extends PixelGrid[GreyscalePixel] {
 
   override def CombinePixels(pixels: List[GreyscalePixel]): GreyscalePixel = {
     var sumBrightness = 0

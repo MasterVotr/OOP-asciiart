@@ -2,11 +2,7 @@ package ASCIIArt.Image.PixelGrid
 
 import ASCIIArt.Image.PixelGrid.Pixel.RGBPixel
 
-case class RGBPixelGrid(
-  _width: Int,
-  _height: Int,
-  _pixels: Array[Array[RGBPixel]])
-    extends PixelGrid[RGBPixel](_width, _height, _pixels) {
+class RGBPixelGrid extends PixelGrid[RGBPixel] {
 
   override def CombinePixels(pixels: List[RGBPixel]): RGBPixel = {
     var sumRed = 0
