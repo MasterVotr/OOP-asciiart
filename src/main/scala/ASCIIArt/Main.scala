@@ -1,7 +1,9 @@
 package ASCIIArt
 
 import ASCIIArt.Controller.ConsoleController.ConsoleController
-import ASCIIArt.Image.RGBtoGreyscaleConvertor
+import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
+import ASCIIArt.Image.Image
+import ASCIIArt.Image2ImageConvertor.RGB2GreyscaleConvertor
 
 object Main extends App {
   // Parse commands
@@ -9,12 +11,12 @@ object Main extends App {
   // Load Image
   val rgbImage = imageImporter.ImportImage()
   // Convert to greyscale
-  val convertor = new RGBtoGreyscaleConvertor()
-  val greyscaleImage = convertor.ConvertImage(rgbImage)
+  var processedImage = new RGB2GreyscaleConvertor().Convert(rgbImage)
   // Apply filters
-  for (filter <- filters)
-    filter.Execute(greyscaleImage)
-  // Export ascii art
+  for (filter <- filters) {
+    processedImage = filter.Execute(processedImage)
+  }
+  // Export
   for (exporter <- exporters)
-    exporter.Execute(greyscaleImage)
+    processedImage = exporter.Execute(processedImage)
 }
