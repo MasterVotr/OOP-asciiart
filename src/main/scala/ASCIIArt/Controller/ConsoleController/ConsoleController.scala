@@ -14,8 +14,8 @@ import scala.util.control.Breaks.break
 object ConsoleController {
   def parseArgs(args: List[String])
     : (ImageImporter, List[FilterCommand], List[ExportCommand]) = {
-    val filterCommands = List[FilterCommand]()
-    val exportCommands = List[ExportCommand]()
+    var filterCommands = List[FilterCommand]()
+    var exportCommands = List[ExportCommand]()
     var imageImporter: ImageImporter = new RandomImageImporter()
     var argumentsLeft = args
     var imageSetFlag = false
@@ -30,7 +30,7 @@ object ConsoleController {
         case "--image" :: path :: tail =>
           if (imageSetFlag) throw new Exception("Image already set!")
           imageSetFlag = true
-          val format = path.takeRight(path.lastIndexOf('.'))
+          val format = path.takeRight(path.length - path.lastIndexOf('.') - 1)
           format match {
             case "jpg" => imageImporter = new JPGFileImageImporter(path)
             case "png" => imageImporter = new PNGFileImageImporter(path)
@@ -39,29 +39,30 @@ object ConsoleController {
           }
           argumentsLeft = tail
         case "--brightness" :: value :: tail =>
-          filterCommands.appended(new BrightnessCmd(value.toInt))
+          filterCommands = filterCommands.appended(new BrightnessCmd(value.toInt))
           argumentsLeft = tail
         case "--flip" :: value :: tail =>
-          filterCommands.appended(new FlipCmd(value))
+          filterCommands = filterCommands.appended(new FlipCmd(value))
           argumentsLeft = tail
         case "--inverse" :: tail =>
-          filterCommands.appended(new InverseCmd())
+          filterCommands = filterCommands.appended(new InverseCmd())
           argumentsLeft = tail
         case "--rotate" :: value :: tail =>
-          filterCommands.appended(new RotateCmd(value.toInt))
+          filterCommands = filterCommands.appended(new RotateCmd(value.toInt))
           argumentsLeft = tail
         case "--scale" :: value :: tail =>
-          filterCommands.appended(new ScaleCmd(value.toInt))
+          filterCommands = filterCommands.appended(new ScaleCmd(value.toDouble))
           argumentsLeft = tail
         case "--output-console" :: tail =>
-          exportCommands.appended(new ConsoleOutputCmd)
+          exportCommands = exportCommands.appended(new ConsoleOutputCmd)
           argumentsLeft = tail
         case "--output-file" :: path :: tail =>
-          exportCommands.appended(new FileOutputCmd(path))
+          exportCommands = exportCommands.appended(new FileOutputCmd(path))
           argumentsLeft = tail
         case option :: tail =>
           throw new Exception("Unknown option: " + option + "!")
     }
+    if (!imageSetFlag) throw new Exception("Image not set!")
     (imageImporter, filterCommands, exportCommands)
   }
 }
