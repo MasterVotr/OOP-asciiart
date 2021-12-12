@@ -7,8 +7,14 @@ case class GreyscalePixel(brightness: Int) extends Pixel {
   }
 
   override def clamp(): GreyscalePixel = {
-    var newBrightness = if (brightness > 255) 255 else brightness
-    newBrightness = if (brightness < 0) 0 else brightness
-    GreyscalePixel(newBrightness)
+    if (brightness > 255) {
+      GreyscalePixel(255)
+    } else {
+      if (brightness < 0) {
+        GreyscalePixel(0)
+      } else {
+        this
+      }
+    }
   }
 }
