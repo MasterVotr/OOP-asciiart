@@ -6,15 +6,15 @@ import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 
 class ImageAsciiGenerator(palette: String = "@%#*+=-:. ") extends AsciiGenerator[Image[GreyscalePixel]] {
   override def generateArt(target: Image[GreyscalePixel]): String = {
-    var asciiart: String = ""
-    val paletteCharSize: Double = 255 / (palette.length - 1)
-    for (x <- 0 until target.getWidth()) {
-      for (y <- 0 until target.getHeight()) {
-        val palettePos = (target.getPixel(y, x).brightness / paletteCharSize).toInt
-        asciiart += palette(palettePos)
+    var asciiArt: String = ""
+    val CharSizeOnPalette: Double = 255.00 / (palette.length - 1)
+    for (y <- 0 until target.getHeight()) {
+      for (x <- 0 until target.getWidth()) {
+        val palettePos: Int = (target.getPixel(x, y).brightness / CharSizeOnPalette).toInt
+        asciiArt += palette(palettePos)
       }
-      asciiart += "\n"
+      asciiArt += "\n"
     }
-    asciiart
+    asciiArt
   }
 }
