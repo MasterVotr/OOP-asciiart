@@ -1,7 +1,7 @@
 package ASCIIArt.Controller.Command.FilterCommand
 
+import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
-import ASCIIArt.Image.{GreyscaleImage, Image}
 import ASCIIArt.ImageFilter.PixelFilterer.GreyscalePixelFilterer
 import ASCIIArt.ImageFilter.PixelFilterer.PixelFilter.InversePixelFilter
 

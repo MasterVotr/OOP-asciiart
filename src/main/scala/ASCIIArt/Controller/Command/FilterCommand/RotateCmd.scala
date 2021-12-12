@@ -1,7 +1,7 @@
 package ASCIIArt.Controller.Command.FilterCommand
 
+import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
-import ASCIIArt.Image.{GreyscaleImage, Image}
 import ASCIIArt.ImageFilter.TransformFilter.RotateFilter.{GreyscaleRotateFilter, Rot180, Rot270, Rot90}
 
 class RotateCmd(_deg: Int) extends FilterCommand {

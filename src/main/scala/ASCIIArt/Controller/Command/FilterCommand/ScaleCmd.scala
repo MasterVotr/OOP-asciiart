@@ -1,6 +1,6 @@
 package ASCIIArt.Controller.Command.FilterCommand
 
-import ASCIIArt.Image.{GreyscaleImage, Image}
+import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.ImageFilter.TransformFilter.ScaleFilter.{ScaleDouble, ScaleFilterGreyscale, ScaleFull, ScaleHalf}
 

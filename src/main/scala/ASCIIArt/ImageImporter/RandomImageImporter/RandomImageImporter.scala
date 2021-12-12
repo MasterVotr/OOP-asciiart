@@ -7,7 +7,7 @@ import ASCIIArt.ImageImporter.ImageImporter
 
 import scala.util.Random
 
-class RandomImageImporter extends ImageImporter{
+class RandomImageImporter extends ImageImporter {
   override def ImportImage(): RGBImage = {
     val rng = new Random()
     val height = rng.nextInt(400) + 200
@@ -16,7 +16,8 @@ class RandomImageImporter extends ImageImporter{
     for (y <- 0 until height) {
       var pixelLine = Vector[RGBPixel]()
       for (x <- 0 until width) {
-        val pixel = RGBPixel(rng.nextInt(255), rng.nextInt(255), rng.nextInt(255))
+        val pixel =
+          RGBPixel(rng.nextInt(255), rng.nextInt(255), rng.nextInt(255))
         pixelLine = pixelLine.appended(pixel)
       }
       pixelGrid = pixelGrid.appended(pixelLine)

@@ -2,10 +2,11 @@ package ASCIIArt.Image.PixelGrid.Pixel
 
 case class RGBPixel(red: Int, green: Int, blue: Int) extends Pixel {
 
-  def this(colour: Int) = this(
-      (colour & 0xff0000) >> 16,  // red
-      (colour & 0x00ff00) >> 8,   // green
-       colour & 0x0000ff)         // blue
+  def this(colour: Int) =
+    this(
+      (colour & 0xff0000) >> 16, // red
+      (colour & 0x00ff00) >> 8, // green
+      colour & 0x0000ff) // blue
 
   override def clamp(): RGBPixel = {
     // clamp red

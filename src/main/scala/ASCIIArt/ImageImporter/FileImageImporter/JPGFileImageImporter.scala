@@ -16,7 +16,7 @@ class JPGFileImageImporter(path: String) extends FileImageImporter(path) {
     val height = img.getHeight()
 
     // Check resolution
-    if (width < 1 || height< 1)
+    if (width < 1 || height < 1)
       throw new Exception("Resolution cannot be <= 0!")
 
     var pixelGrid = new PixelGrid[RGBPixel]()

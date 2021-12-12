@@ -1,8 +1,8 @@
 package ASCIIArt.Controller.Command.ExportCommand
 
 import ASCIIArt.AsciiGenerator.ImageAsciiGenerator.ImageAsciiGenerator
+import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
-import ASCIIArt.Image.{GreyscaleImage, Image}
 import ASCIIArt.TextExporter.ConsoleTextExporter.ConsoleTextExporter
 
 class ConsoleOutputCmd extends ExportCommand {
