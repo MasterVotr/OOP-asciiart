@@ -11,12 +11,9 @@ abstract class RotateFilter[P <: Pixel](rotation: RotationEnum) extends ImageFil
     rotation match {
       case Rot90 => Rotate90deg(image)
       case Rot180 =>
-        Rotate90deg(image)
-        Rotate90deg(image)
+        Rotate90deg(Rotate90deg(image))
       case Rot270 =>
-        Rotate90deg(image)
-        Rotate90deg(image)
-        Rotate90deg(image)
+        Rotate90deg(Rotate90deg(Rotate90deg(image)))
       case _ => throw new Exception("Unknown rotation!")
     }
   }

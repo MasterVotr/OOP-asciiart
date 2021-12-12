@@ -1,18 +1,18 @@
 package ASCIIArt.ImageFilter.TransformFilter.RotateFilter
 
-import ASCIIArt.Image.PixelGrid.GreyscalePixelGrid
+import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.{GreyscaleImage, Image}
-import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
+import ASCIIArt.Image.PixelGrid.Pixel.{GreyscalePixel, RGBPixel}
 
 class GreyscaleRotateFilter(deg: RotationEnum) extends RotateFilter[GreyscalePixel](deg) {
   override def Rotate90deg(image: Image[GreyscalePixel]): Image[GreyscalePixel] = {
-    val newPixelGrid = new GreyscalePixelGrid()
+    var newPixelGrid = new PixelGrid[GreyscalePixel]()
     for (x <- 0 until image.getWidth()) {
-      val newPixelLine = Vector[GreyscalePixel]()
+      var newPixelLine = Vector[GreyscalePixel]()
       for (y <- 0 until image.getHeight()) {
-        newPixelLine.appended(image.getPixel(x, image.getHeight() - y - 1))
+        newPixelLine = newPixelLine.appended(image.getPixel(x, image.getHeight() - y - 1))
       }
-      newPixelGrid.appended(newPixelLine)
+      newPixelGrid = newPixelGrid.appended(newPixelLine)
     }
     GreyscaleImage(newPixelGrid)
   }
