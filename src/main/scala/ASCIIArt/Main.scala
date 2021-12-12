@@ -1,8 +1,6 @@
 package ASCIIArt
 
 import ASCIIArt.Controller.ConsoleController.ConsoleController
-import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
-import ASCIIArt.Image.Image
 import ASCIIArt.Image2ImageConvertor.RGB2GreyscaleConvertor
 
 object Main extends App {
@@ -17,6 +15,7 @@ object Main extends App {
     processedImage = filter.Execute(processedImage)
   }
   // Export
-  for (exporter <- exporters)
+  for (exporter <- exporters) {
     processedImage = exporter.Execute(processedImage)
+  }
 }
