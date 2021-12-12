@@ -1,6 +1,6 @@
 package ASCIIArt.Image
 
 import ASCIIArt.Image.PixelGrid.Pixel.RGBPixel
-import ASCIIArt.Image.PixelGrid.RGBPixelGrid
+import ASCIIArt.Image.PixelGrid.PixelGrid
 
-case class RGBImage(pixelGrid: RGBPixelGrid) extends Image[RGBPixel](pixelGrid) {}
+case class RGBImage(pixelGrid: PixelGrid[RGBPixel]) extends Image[RGBPixel](pixelGrid) {}

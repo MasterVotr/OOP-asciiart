@@ -1,5 +1,5 @@
 package ASCIIArt.Image.PixelGrid.Pixel
 
-trait Pixel {
+abstract class Pixel {
   def clamp(): Pixel
 }
