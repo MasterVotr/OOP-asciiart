@@ -1,6 +1,6 @@
 package ASCIIArt.Image2ImageConvertor
 
-import ASCIIArt.Image.PixelGrid.GreyscalePixelGrid
+import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.PixelGrid.Pixel.{GreyscalePixel, RGBPixel}
 import ASCIIArt.Image.{GreyscaleImage, Image}
 
@@ -11,13 +11,13 @@ class RGB2GreyscaleConvertor(
 
 
   override def Convert(image: Image[RGBPixel]): Image[GreyscalePixel] = {
-    val newPixelGrid = new GreyscalePixelGrid()
+    var newPixelGrid = new PixelGrid[GreyscalePixel]()
     for (y <- 0 until image.getHeight()) {
-      val newPixelLine = Vector[RGBPixel]()
+      var newPixelLine = Vector[GreyscalePixel]()
       for (x <- 0 until image.getWidth()) {
-        newPixelLine.appended(ConvertPixel(image.getPixel(x, y)))
+        newPixelLine = newPixelLine.appended(ConvertPixel(image.getPixel(x, y)))
       }
-      newPixelGrid.appended(newPixelLine)
+      newPixelGrid = newPixelGrid.appended(newPixelLine)
     }
     GreyscaleImage(newPixelGrid)
   }
@@ -26,7 +26,6 @@ class RGB2GreyscaleConvertor(
     val red = pixel.red * redScale
     val green = pixel.green * greenScale
     val blue = pixel.blue * blueScale
-
     GreyscalePixel((red + green + blue).toInt).clamp()
   }
 }
