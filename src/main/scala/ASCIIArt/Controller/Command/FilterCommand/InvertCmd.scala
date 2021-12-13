@@ -3,9 +3,9 @@ package ASCIIArt.Controller.Command.FilterCommand
 import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.ImageFilter.PixelFilterer.GreyscalePixelFilterer
-import ASCIIArt.ImageFilter.PixelFilterer.PixelFilter.InversePixelFilter
+import ASCIIArt.ImageFilter.PixelFilterer.PixelFilter.InvertPixelFilter
 
-class InverseCmd extends FilterCommand {
+class InvertCmd extends FilterCommand {
   override def Execute(target: Image[GreyscalePixel]): Image[GreyscalePixel] =
-    new GreyscalePixelFilterer(new InversePixelFilter).apply(target)
+    new GreyscalePixelFilterer(new InvertPixelFilter).apply(target)
 }

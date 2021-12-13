@@ -40,8 +40,8 @@ object ConsoleController {
       case "--flip" :: value :: tail =>
         filterCommands = filterCommands.appended(new FlipCmd(value))
         argumentsLeft = tail
-      case "--inverse" :: tail =>
-        filterCommands = filterCommands.appended(new InverseCmd())
+      case "--invert" :: tail =>
+        filterCommands = filterCommands.appended(new InvertCmd())
         argumentsLeft = tail
       case "--rotate" :: value :: tail =>
         filterCommands = filterCommands.appended(new RotateCmd(value.toInt))
