@@ -35,7 +35,7 @@ object ConsoleController {
         }
         argumentsLeft = tail
       case "--brightness" :: value :: tail =>
-        filterCommands = filterCommands.appended(new BrightnessCmd(value.toInt))
+        filterCommands = filterCommands.appended(new BrightnessCmd(value))
         argumentsLeft = tail
       case "--flip" :: value :: tail =>
         filterCommands = filterCommands.appended(new FlipCmd(value))
@@ -44,10 +44,10 @@ object ConsoleController {
         filterCommands = filterCommands.appended(new InvertCmd())
         argumentsLeft = tail
       case "--rotate" :: value :: tail =>
-        filterCommands = filterCommands.appended(new RotateCmd(value.toInt))
+        filterCommands = filterCommands.appended(new RotateCmd(value))
         argumentsLeft = tail
       case "--scale" :: value :: tail =>
-        filterCommands = filterCommands.appended(new ScaleCmd(value.toDouble))
+        filterCommands = filterCommands.appended(new ScaleCmd(value))
         argumentsLeft = tail
       case "--output-console" :: tail =>
         exportCommands = exportCommands.appended(new ConsoleOutputCmd)
