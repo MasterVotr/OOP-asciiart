@@ -21,6 +21,8 @@ case class PixelGrid[P <: Pixel] (protected val pixels: IndexedSeq[IndexedSeq[P]
     pixels(y)(x)
 
   def appended(pixelLine: IndexedSeq[P]): PixelGrid[P] = {
+    if(pixelLine.length != getWidth())
+      throw new Exception("New pixel line length not same as grid width")
     new PixelGrid[P](pixels.appended(pixelLine))
   }
 }
