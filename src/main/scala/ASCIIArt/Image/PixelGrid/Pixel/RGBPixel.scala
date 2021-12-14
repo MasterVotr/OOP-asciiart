@@ -10,14 +10,26 @@ case class RGBPixel(red: Int, green: Int, blue: Int) extends Pixel {
 
   override def clamp(): RGBPixel = {
     // clamp red
-    var newRed = if (red > 255) 255 else red
-    newRed = if (red < 0) 0 else red
+    var newRed = red
+    if (red > 255)
+      newRed = 255
+    else if (red < 0)
+      newRed = 0
+
     // clamp green
-    var newGreen = if (green > 255) 255 else green
-    newGreen = if (green < 0) 0 else green
+    var newGreen = green
+    if (green > 255)
+      newGreen = 255
+    else if (green < 0)
+      newGreen = 0
+
     // clamp blue
-    var newBlue = if (blue > 255) 255 else blue
-    newBlue = if (blue < 0) 0 else blue
+    var newBlue = blue
+    if (blue > 255)
+      newBlue = 255
+    else if (blue < 0)
+      newBlue = 0
+
     RGBPixel(newRed, newGreen, newBlue)
   }
 }
