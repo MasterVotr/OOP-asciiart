@@ -20,14 +20,6 @@ case class PixelGrid[P <: Pixel] (protected val pixels: IndexedSeq[IndexedSeq[P]
   def getPixel(x: Int, y: Int): P =
     pixels(y)(x)
 
-  def apply(i: Int): IndexedSeq[P] = {
-    pixels.apply(i)
-  }
-
-  def length: Int = {
-    pixels.length
-  }
-
   def appended(pixelLine: IndexedSeq[P]): PixelGrid[P] = {
     new PixelGrid[P](pixels.appended(pixelLine))
   }
