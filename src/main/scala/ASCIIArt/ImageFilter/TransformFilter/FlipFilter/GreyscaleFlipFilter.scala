@@ -4,6 +4,11 @@ import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.{GreyscaleImage, Image}
 
+/**
+ * Specialized flip filter class for Greyscale images
+ * Implements the flip filter abstract methods for all axes
+ * @param axis
+ */
 class GreyscaleFlipFilter(axis: FlipAxisEnum)
     extends FlipFilter[GreyscalePixel](axis) {
   override def XFlip(image: Image[GreyscalePixel]): Image[GreyscalePixel] = {

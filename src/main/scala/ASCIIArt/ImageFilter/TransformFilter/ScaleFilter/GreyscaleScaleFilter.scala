@@ -4,6 +4,11 @@ import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.{GreyscaleImage, Image}
 
+/**
+ * Specialized scaling filter for Greyscale images
+ * Implements scaling abstract methods for all scaling factors
+ * @param scale
+ */
 class GreyscaleScaleFilter(scale: ScalingEnum)
     extends ScaleFilter[GreyscalePixel](scale) {
   override def HalfScale(

@@ -7,6 +7,9 @@ import ASCIIArt.ImageImporter.ImageImporter
 
 import scala.util.Random
 
+/**
+ * Specialized class for creating (importing) images using random pixel generation
+ */
 class RandomImageImporter extends ImageImporter {
   override def ImportImage(): RGBImage = {
     val rng = new Random()

@@ -4,6 +4,12 @@ import ASCIIArt.Image.PixelGrid.Pixel.{GreyscalePixel, RGBPixel}
 import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.{GreyscaleImage, Image}
 
+/**
+ * Image2ImageConvertor specialization for conversion of RGB images to Greyscale images using given scales of conversion
+ * @param redScale
+ * @param greenScale
+ * @param blueScale
+ */
 class RGB2GreyscaleConvertor(
   val redScale: Double = 0.3,
   val greenScale: Double = 0.59,

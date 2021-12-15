@@ -7,6 +7,10 @@ import ASCIIArt.Image.RGBImage
 import java.io.File
 import javax.imageio.ImageIO
 
+/**
+ * Specialized file image importer class for importing images from GIF formatted files
+ * @param path
+ */
 class GIFFileImageImporter(path: String) extends FileImageImporter(path) {
   override def ImportImage(): RGBImage = {
     val img = ImageIO.read(new File(path))

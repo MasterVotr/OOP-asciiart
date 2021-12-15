@@ -1,5 +1,13 @@
 package ASCIIArt.Image.PixelGrid.Pixel
 
+/**
+ * A specialized pixel method for a single RGB pixel
+ * Can be constructed using values of red, green and blue
+ * Can also be constructed from an Int of colour (type extracted from ImageIOs getRGB())
+ * @param red
+ * @param green
+ * @param blue
+ */
 case class RGBPixel(red: Int, green: Int, blue: Int) extends Pixel {
 
   def this(colour: Int) =

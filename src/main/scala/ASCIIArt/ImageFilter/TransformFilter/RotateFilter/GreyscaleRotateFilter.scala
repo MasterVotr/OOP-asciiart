@@ -4,6 +4,11 @@ import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.Image.PixelGrid.PixelGrid
 import ASCIIArt.Image.{GreyscaleImage, Image}
 
+/**
+ * Specialized rotation filter for Greyscale images
+ * Implements rotate abstract methods for all rotations
+ * @param deg
+ */
 class GreyscaleRotateFilter(deg: RotationEnum)
     extends RotateFilter[GreyscalePixel](deg) {
   override def Rotate90deg(

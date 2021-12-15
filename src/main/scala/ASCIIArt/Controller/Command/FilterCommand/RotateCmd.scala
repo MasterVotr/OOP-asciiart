@@ -4,6 +4,10 @@ import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 import ASCIIArt.ImageFilter.TransformFilter.RotateFilter.{GreyscaleRotateFilter, Rot180, Rot270, Rot90}
 
+/**
+ * Filter commands that uses a rotate filter to process a given image and return the result
+ * @param _deg
+ */
 class RotateCmd(_deg: String) extends FilterCommand {
   override def Execute(target: Image[GreyscalePixel]): Image[GreyscalePixel] = {
     val deg = _deg.toInt % 360

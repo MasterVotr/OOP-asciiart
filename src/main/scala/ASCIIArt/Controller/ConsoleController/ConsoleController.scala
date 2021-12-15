@@ -8,6 +8,10 @@ import ASCIIArt.ImageImporter.RandomImageImporter.RandomImageImporter
 
 import scala.util.control.Breaks.break
 
+/**
+ * Object for parsing commands given in a List[String] of arguments
+ * Parses and return an ImageImporter, a List of filter commands and a List of exporters
+ */
 object ConsoleController {
   def parseArgs(args: List[String])
     : (ImageImporter, List[FilterCommand], List[ExportCommand]) = {

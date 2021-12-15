@@ -4,6 +4,10 @@ import ASCIIArt.AsciiGenerator.AsciiGenerator
 import ASCIIArt.Image.Image
 import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 
+/**
+ * Class for generating AsciiArt from greyscale images using a given palette
+ * @param palette
+ */
 class ImageAsciiGenerator(palette: String = "@%#*+=-:. ")
     extends AsciiGenerator[Image[GreyscalePixel]] {
   override def generateArt(target: Image[GreyscalePixel]): String = {
