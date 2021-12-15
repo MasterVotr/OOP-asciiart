@@ -23,6 +23,7 @@ object ConsoleController {
         if (imageSetFlag) throw new Exception("Image already set!")
         imageSetFlag = true
         imageImporter = new RandomImageImporter()
+        argumentsLeft = tail
       case "--image" :: path :: tail =>
         if (imageSetFlag) throw new Exception("Image already set!")
         imageSetFlag = true
