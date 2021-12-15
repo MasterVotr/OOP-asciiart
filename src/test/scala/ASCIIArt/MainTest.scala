@@ -4,6 +4,7 @@ import ASCIIArt.Controller.ConsoleController.ConsoleController
 import ASCIIArt.Image2ImageConvertor.RGB2GreyscaleConvertor
 import org.scalatest.FunSuite
 
+import java.io.File
 import scala.io.Source
 
 class MainTest extends FunSuite {
@@ -51,5 +52,10 @@ class MainTest extends FunSuite {
 
     // Test result
     assert(content == "@@@%#*+=-:")
+
+    // Cleanup
+    // Cleanup
+    val tmpFileRef = new File(out_path)
+    if (tmpFileRef.exists()) tmpFileRef.delete()
   }
 }
