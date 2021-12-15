@@ -5,5 +5,5 @@ import ASCIIArt.Image.PixelGrid.Pixel.GreyscalePixel
 class BrightnessPixelFilter(val amount: Int)
     extends PixelFilter[GreyscalePixel] {
   override def apply(pixel: GreyscalePixel): GreyscalePixel =
-    GreyscalePixel(pixel.brightness + amount).clamp()
+    GreyscalePixel(pixel.brightness + (amount%256)).clamp()
 }
