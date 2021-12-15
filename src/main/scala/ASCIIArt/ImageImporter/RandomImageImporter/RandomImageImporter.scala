@@ -10,8 +10,8 @@ import scala.util.Random
 class RandomImageImporter extends ImageImporter {
   override def ImportImage(): RGBImage = {
     val rng = new Random()
-    val height = rng.nextInt(400) + 200
-    val width = rng.nextInt(400) + 400
+    val height = rng.nextInt(200) + 10
+    val width = rng.nextInt(200) + 10
     var pixelGrid = new PixelGrid[RGBPixel]()
     for (y <- 0 until height) {
       var pixelLine = Vector[RGBPixel]()
