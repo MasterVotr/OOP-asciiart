@@ -17,7 +17,7 @@ class RandomImageImporter extends ImageImporter {
       var pixelLine = Vector[RGBPixel]()
       for (x <- 0 until width) {
         val pixel =
-          RGBPixel(rng.nextInt(255), rng.nextInt(255), rng.nextInt(255))
+          RGBPixel(rng.nextInt(256), rng.nextInt(256), rng.nextInt(256))
         pixelLine = pixelLine.appended(pixel)
       }
       pixelGrid = pixelGrid.appended(pixelLine)
