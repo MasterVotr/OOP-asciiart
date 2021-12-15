@@ -14,6 +14,8 @@ case class PixelGrid[P <: Pixel] (protected val pixels: IndexedSeq[IndexedSeq[P]
   }
 
   def getWidth(): Int = {
+    if (getHeight() == 0)
+      0
     pixels(0).length
   }
 
