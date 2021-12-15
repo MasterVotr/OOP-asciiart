@@ -60,6 +60,7 @@ object ConsoleController {
         throw new Exception("Unknown option: " + option + "!")
     }
     if (!imageSetFlag) throw new Exception("Image not set!")
+    if (exportCommands.isEmpty) throw new Exception("Exporter not set!")
     (imageImporter, filterCommands, exportCommands)
   }
 }
